@@ -1,0 +1,32 @@
+{
+  "name": "nodejs-cucumber-apitesting",
+  "version": "1.0.0",
+  "description": "nodejs-cucumber-apitesting",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/cucumber-js -f  src/features/ -r src/steps/ --parallel 3 && node ./report.js",
+    "directory-service": "./node_modules/.bin/cucumber-js -f  src/features/ -r src/steps/ --tags '@directory-service'",
+    "report": "node ./report.js",
+    "directory-service-bdd": "(yarn directory-service && yarn report) || yarn report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atadew-technologies/nodejs-cucumber-apitesting.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atadew-technologies/nodejs-cucumber-apitesting/issues"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "faker": "^5.1.0",
+    "lodash": "^4.17.20",
+    "dotenv-flow": "^3.2.0"
+  },
+  "devDependencies": {
+    "cucumber": "^6.0.5",
+    "cucumber-html-reporter": "^5.2.0"
+  },
+  "homepage": "https://github.com/atadew-technologies/nodejs-cucumber-apitesting#readme"
+}
